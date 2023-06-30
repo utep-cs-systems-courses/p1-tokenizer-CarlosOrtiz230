@@ -32,7 +32,7 @@ char *token_start(char *str){
 /* returns a pointer terminator char following *token */
 char *token_terminator(char *token){
    char* terminator = token;
-    while (*terminator != ' ' && *terminator != '\0') {
+    while (*terminator != ' ' ||  *terminator != '\0') {
       terminator++;
     }
     return terminator; //reach to the end of the string
