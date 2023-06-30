@@ -1,4 +1,4 @@
-OBJS=  mainProgram.o
+OBJS=  mainProgram.o tokenizer.o
 CFLAGS=-g -O3
 all: runner
 runner: $(OBJS) 

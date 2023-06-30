@@ -1,5 +1,8 @@
-#ifndef _TOKENIZER_
-#define _TOKENIZER_
+#include "stdio.h"/* for putchar */
+#include <stddef.h>
+#include <stdlib.h>
+
+
 
 /* Return true (non-zero) if c is a whitespace characer
    ('\t' or ' ').  
@@ -23,7 +26,6 @@ char *token_start(char *str){
   while(non_space_char(*str)){
     str++;
   }//while ends
-  str++;
   return (*str == '\0')? NULL:str;
 
   
@@ -44,7 +46,7 @@ int count_tokens(char *str){
     char *token;
 
     while (1) {
-      *token = token_start(str);
+      token = token_start(str);
       if (token == NULL){
 	break;
       }
@@ -61,7 +63,7 @@ char *copy_str(char *inStr, short len){
   for(int i = 0; i<(len+1); i++){
     newSpace[i] = inStr[i];
   }
-  newSpace[len] = "\0";
+  newSpace[len] ='\0';
   return newSpace;
 }//cocpy str
 
@@ -76,24 +78,34 @@ char *copy_str(char *inStr, short len){
 */
 char **tokenize(char* str){
   int size = count_tokens(str);
-  char  **tokenVector =(char**)malloc(size * sizeof(char*));
+  char  **tokenVector =(char**)malloc((size+1)* sizeof(char*));
   tokenVector[size+1] = '\0'; 
   char **token;
   for(int i = 0; i<size; i++){
-    while(*str!='\0'){
-      token = 
+    while(*str!='\0'||*str == ' ' ){
+      token += str;
+      str++;
     }//while ends
-    tokenVector[i] = 
+    tokenVector[i] = token;
+    void free(void token);
   }
-  tokenVector[size] = '\0';
-  return tokenVector;
+   return tokenVector;
   
 }//methods ends
 
 /* Prints all tokens. */
-void print_tokens(char **tokens);
+void print_tokens(char **tokens){
+  for(int i = 0; tokens[i]!="\0";i++){ 
+    printf("Token: %s\n",tokens[i]);
+  }
+}
 
 /* Frees all tokens and the vector containing themx. */
-void free_tokens(char **tokens);
-
-#endif
+void free_tokens(char **tokens){
+  char **token = tokens;
+  while (*token != NULL){//traverse to clean individual tokens
+    free(*token);
+    token++;
+  }
+  free(tokens);//clean the array
+}//method end

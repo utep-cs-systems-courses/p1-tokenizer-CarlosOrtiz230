@@ -1,6 +1,6 @@
 #include "stdio.h"
-
-main(){
+#include <stddef.h>
+int main(void){
   int desition;
   printf("Hi, welcome to your tokanizer :D \n see the options\n");
   while(1){
