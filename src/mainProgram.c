@@ -5,9 +5,9 @@
 
 int main(void){
   int desition;
-  printf("Hi, welcome to your tokanizer :D \n see the options\n");
-  while(1){
-    printf("press 1 to tokanize a word\n");
+  printf("Hi, welcome to your tokenizer :D \n see the options\n");
+  while(1){ 
+    printf("press 1 to tokenize a word\n");
     printf("press 2 to see your history\n");
     printf("press 3 to exit the program\n");
     scanf("%d",&desition);
@@ -15,6 +15,7 @@ int main(void){
     switch(desition){
        case 1:
 	 printf("Tokanize\n");
+	 tokenizeOption();
 	 break;
        case 2:
 	 printf("History\n");
@@ -39,6 +40,4 @@ void tokenizeOption(){
   scanf("%s",userInput);
   char** userTokens = tokenize(userInput);
   print_tokens(userTokens);
-  
-
 }
