@@ -1,8 +1,14 @@
 #include "stdio.h"
 #include <stddef.h>
 #define MAX_LENGTH 100
-#include "tokenizer.h"
+#include "tokenizer.h" //calling the functions to tokenize
 
+//methods in this file
+
+void tokenizeOption();
+
+
+//main program start
 int main(void){
   int desition;
   printf("Hi, welcome to your tokenizer :D \n see the options\n");
@@ -37,7 +43,9 @@ void tokenizeOption(){
   char userInput[MAX_LENGTH];
   puts("Enter Your phrase");
   printf(">");
-  scanf("%s",userInput);
+  fgets(userInput, sizeof(userInput), stdin);
+  userInput[strcspn(userInput, "\n")] = '\0';
+  printf("\n REACH HERE :D");
   char** userTokens = tokenize(userInput);
   print_tokens(userTokens);
 }
