@@ -77,20 +77,27 @@ char *copy_str(char *inStr, short len){
      tokens[3] = 0
 */
 char **tokenize(char* str){
-  int size = count_tokens(str);
-  char  **tokenVector =(char**)malloc((size+1)* sizeof(char*));
-  tokenVector[size+1] = '\0'; 
-  char **token;
-  for(int i = 0; i<size; i++){
-    while(*str!='\0'||*str == ' ' ){
-      token += str;
-      str++;
-    }//while ends
-    tokenVector[i] = token;
-    void free(void token);
-  }
-   return tokenVector;
-  
+    int size = count_tokens(str);// tokens ammount
+    char  **tokenVector =(char**)malloc((size+1)* sizeof(char*));// array of size+1 so \0 fits
+    int i = 0;
+    char *token; //create an empty token pointer
+    while (*str != '\0') { //while the string is not at 0 str continue
+      while (*str == ' ' || *str == '\t') { // while str is not at space or tab
+	str++; //move to next char until space delimits token
+      }
+      if (*str == '\0') {//end of the tokens
+	break;
+      }
+      token = token_start(str); // start tokanzing
+      int tokenLength = token_terminator(token) - token;
+      tokenVector[i] = (char*)malloc((tokenLength + 1) * sizeof(char));
+      char* strCopy = copy_str(tokenVector[i],  tokenLength);
+      tokenVector[i][tokenLength] = '\0';//double pointer can be used as double array
+      str = token_terminator(token);
+      i++;
+    }
+    tokenVector[i] = NULL;
+    return tokenVector;
 }//methods ends
 
 /* Prints all tokens. */
