@@ -8,7 +8,7 @@
    ('\t' or ' ').  
    Zero terminators are not printable (therefore false) */
 int space_char(char c){
-  return (c == ' ' || c =='\t')? 1:0;
+  return ( (c == ' ' || c =='\t') && c!= '\0' )? 1:0;
 }//space char ends
 
 
@@ -16,25 +16,27 @@ int space_char(char c){
    character (not tab or space).  
    Zero terminators are not printable (therefore false) */ 
 int non_space_char(char c){
-  return (c == ' ' || c =='\t')? 0:1;
+  return (c == ' ' || c =='\t'|| c == '\0')? 0:1;
 }
 
 /* Returns a pointer to the first character of the next 
    space-separated token in zero-terminated str.  Return a zero pointer if 
    str does not contain any tokens. */
 char *token_start(char *str){
-  while(non_space_char(*str)){
-    str++;
+  char* temp = str;
+  while(non_space_char(*temp)){
+    temp++;
   }//while ends
-  return (*str == '\0')? NULL:str;
-
-  
+  return (*temp == '\0')? NULL:temp;
 }//mehtod ends
 
 /* returns a pointer terminator char following *token */
 char *token_terminator(char *token){
    char* terminator = token;
-    while (*terminator != ' ' ||  *terminator != '\0') {
+    while (*terminator != '\0') {
+      if(space_char(*terminator)){
+	return terminator;
+      }
       terminator++;
     }
     return terminator; //reach to the end of the string
@@ -43,18 +45,16 @@ char *token_terminator(char *token){
 /* Counts the number of tokens in the string argument. */
 int count_tokens(char *str){
     int count = 0;
+    char *temp; 
     char *token;
-
-    while (1) {
-      token = token_start(str);
-      if (token == NULL){
-	break;
-      }
+    token = str;
+    while (temp = token_start(token)) {
+      token = token_terminator(temp);
       count++;
-      str = token_terminator(token);
     }
     return count;
-}//method ends
+}//method endso
+
 
 /* Returns a fresly allocated new zero-terminated string 
    containing <len> chars from <inStr> */
@@ -77,7 +77,7 @@ char *copy_str(char *inStr, short len){
      tokens[3] = 0
 */
 char **tokenize(char* str){
-    int size = count_tokens(str);// tokens ammount
+    int size = count_tokens(str);// tokens ammount ;
     char  **tokenVector =(char**)malloc((size+1)* sizeof(char*));// array of size+1 so \0 fits
     int i = 0;
     char *token; //create an empty token pointer
@@ -101,6 +101,7 @@ char **tokenize(char* str){
 }//methods ends
 
 /* Prints all tokens. */
+
 void print_tokens(char **tokens){
   for(int i = 0; tokens[i]!="\0";i++){ 
     printf("Token: %s\n",tokens[i]);
