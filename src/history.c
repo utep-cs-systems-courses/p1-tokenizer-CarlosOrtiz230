@@ -1,3 +1,4 @@
+
 #include "stdio.h"/* for putchar */
 #include <stddef.h>
 #include <stdlib.h>
@@ -7,7 +8,7 @@
 /* initialize the linked list to keep the history. */
 
 List* init_history(){
-  List * myHistory;  //declared
+  List* myHistory = malloc(sizeof(List));
   myHistory -> root = NULL;//initialized
   return  myHistory;
 }//init history ends
@@ -18,13 +19,16 @@ List* init_history(){
 */
 void add_history(List *list, char *str){
   Item *temp = list -> root;
-  int  counter = 0;
+  int  counter = 0;//keep a a number
+  Item* newItem = malloc(sizeof(Item));
   while(temp != NULL ){
     temp++;
     counter++;
  }
-  temp -> id = counter;
-  temp -> str = str;
+  temp = newItem; 
+  temp->id = counter;
+  temp->str = str;
+  temp->next = NULL;
 }//add history ends
 
 /* retrieve the string stored in the node where item->id == id.

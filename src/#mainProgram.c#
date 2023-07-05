@@ -56,5 +56,6 @@ void tokenizeOption(List hst){ //tokenizer option calls tokenizer functions and 
   add_history(hst, userTokens);
   print_history(hst);
 }
-  
+
+
  
