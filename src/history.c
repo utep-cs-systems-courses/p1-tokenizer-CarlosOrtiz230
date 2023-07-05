@@ -21,22 +21,20 @@ void add_history(List *list, char *str){
   Item *temp = list -> root;
   int  counter = 0;//keep a a number
   Item* newItem = malloc(sizeof(Item));
+  newItem -> str = str;
   if(temp == NULL){ //if temp is empty, item becomes the root
     newItem = newItem;
     newItem -> id = counter;
-    newItem -> str = str;
     list -> root = newItem
-     return;
+    return;
   }
 
-  while(temp != NULL ){
+  while(temp-> next != NULL ){
     temp = temp -> next;
     counter++;
  }
-  temp = newItem; 
-  temp->id = counter;
-  temp->str = str;
-  temp->next = NULL;
+  temp->next = newItem; 
+  temp->id = counter;;
 }//add history ends
 
 /* retrieve the string stored in the node where item->id == id.
