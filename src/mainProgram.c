@@ -45,12 +45,10 @@ int main(void){
   char userInput[100];
   printf("Enter a string:\n> ");
   fgets(userInput,100,stdin);
-  printf("%s",userInput);
   userInput[100 - 1] = '\0';
-  char* p = userInput;
-  printf("User input: %s\n", p);
+  char* p = userInput;;
   char** userTokens = tokenize(p);
   print_tokens(userTokens);
   }
-
+  
  

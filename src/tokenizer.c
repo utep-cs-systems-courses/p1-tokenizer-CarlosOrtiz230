@@ -2,6 +2,7 @@
 #include "stdio.h"/* for putchar */
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 
@@ -49,10 +50,8 @@ int count_tokens(char *str){
   char *temp;
   char *token;
   token = str;
-  puts("hola ");
   while (temp = token_start(token)) {
     token = token_terminator(temp);
-    puts("check");
     ++ count;
   }
   return count;
@@ -76,7 +75,6 @@ char *copy_str(char *inStr, short len){
 
 /* Returns a freshly allocated zero-terminated vector of freshly allocated 
    space-separated tokens from zero-terminated str.
-
    For example, tokenize("hello world string") would result in:
      tokens[0] = "hello"
      tokens[1] = "world"
@@ -85,25 +83,26 @@ char *copy_str(char *inStr, short len){
 */
 char **tokenize(char* str){
     int size = count_tokens(str);// tokens ammount ;
-    printf("%d",size);
     char  **tokenVector =(char**)malloc((size+1)* sizeof(char*));// array of size+1 so \0 fits
     int i = 0;
     char *token; //create an empty token pointer
-    while (*str != '\0') { //while the string is not at 0 str continue
-      while (*str == ' ' || *str == '\t') { // while str is not at space or tab
-	str++; //move to next char until space delimits token
+    char* temp = str;
+    while (*temp != '\0') { //while the string is not at 0 str continue
+      while (*temp == ' ' || *temp == '\t') { // while str is not at space or tab
+	temp++; //move to next char until space delimits token
       }
-      if (*str == '\0') {//end of the tokens
+      if (*temp == '\0') {//end of the tokens
 	break;
       }
-      token = token_start(str); // start tokanzing
+      token = token_start(temp); // start tokanzing
       int tokenLength = token_terminator(token) - token;
       tokenVector[i] = (char*)malloc((tokenLength + 1) * sizeof(char));
-      char* strCopy = copy_str(tokenVector[i],  tokenLength);
+      tokenVector[i]= copy_str(token  ,  tokenLength);
       tokenVector[i][tokenLength] = '\0';//double pointer can be used as double array
-      str = token_terminator(token);
+      temp = token_terminator(token);
       i++;
     }
+     
     tokenVector[i] = NULL;
     return tokenVector;
 }//methods ends
@@ -111,9 +110,11 @@ char **tokenize(char* str){
 /* Prints all tokens. */
 
 void print_tokens(char **tokens){
-  
-  for(int i = 0; tokens[i]!=NULL;i++){ 
-    printf("Token: %s\n",tokens[i]);
+  printf("Tokens:\n");
+  char **token = tokens;
+  while (*token != NULL) {
+    printf("Token: %s\tAddress: %p\n", *token, (void *)token);
+    token++;
   }
 }
 
