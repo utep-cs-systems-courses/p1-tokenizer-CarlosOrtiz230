@@ -21,8 +21,16 @@ void add_history(List *list, char *str){
   Item *temp = list -> root;
   int  counter = 0;//keep a a number
   Item* newItem = malloc(sizeof(Item));
+  if(temp == NULL){ //if temp is empty, item becomes the root
+    newItem = newItem;
+    newItem -> id = counter;
+    newItem -> str = str;
+    list -> root = newItem
+     return;
+  }
+
   while(temp != NULL ){
-    temp++;
+    temp = temp -> next;
     counter++;
  }
   temp = newItem; 
