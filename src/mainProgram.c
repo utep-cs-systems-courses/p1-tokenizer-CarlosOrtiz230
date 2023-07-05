@@ -2,15 +2,15 @@
 #include <stddef.h>
 #include <string.h>
 #define MAX_LENGTH 100
-#include "tokenizer.h" //calling the functions to tokenize
+#include "tokenizer.h"// calling the functions to tokenize
 
-/* //methods in this file */
+//methods in this file
 
-/* void tokenizeOption(); */
+void tokenizeOption();
 
 
-/* //main program start */
-/* int main(void){ */
+//main program start
+int main(void){
 /*   int desition; */
 /*   printf("Hi, welcome to your tokenizer :D \n see the options\n"); */
 /*   while(1){ */
@@ -19,7 +19,7 @@
 /*     printf("press 2 to see your history\n"); */
 /*     printf("press 3 to exit the program\n"); */
 /*     scanf("%d",&desition); */
-/*     //while(getchar() != '\n');   */
+/*     //while(getchar() != '\n'); */
 /*     switch(desition){ */
 /*        case 1: */
 /* 	 printf("Tokanize\n"); */
@@ -37,26 +37,20 @@
 /*     }//switch case ends */
 /*   }//while ends */
 /*  end_of_the_program: */
-/*   return 0; */
+/*    return 0; */
 /* }//main ends */
 
 
 /* void tokenizeOption(){ */
-/*   char userInput[10]; */
-/*   puts("Enter Your phrase"); */
-/*   printf(">"); */
-/*   getchar(); // Consume the newline character from the previous input */
-/*   userInput[strcspn(userInput, "\n")] = '\0'; */
-/*   fgets(userInput,sizeof(userInput), stdin); */
-/*   printf("\n REACH HERE :D\n"); */
-/*   puts(userInput); */
-/*   char** userTokens = tokenize(userInput); */
-/*   //print_tokens(userTokens); */
-/* } */
+  char userInput[100];
+  printf("Enter a string:\n> ");
+  fgets(userInput,100,stdin);
+  printf("%s",userInput);
+  userInput[100 - 1] = '\0';
+  char* p = userInput;
+  printf("User input: %s\n", p);
+  char** userTokens = tokenize(p);
+  print_tokens(userTokens);
+  }
 
-int main(){
-
-  puts("print statement 1");
-  tokenize("input for the tokenizer");
-  puts("print statement 2 after tokenizer is called");
-}
+ 
