@@ -19,7 +19,7 @@ int main(void){
   printf("hi, welcome to your tokenizer :d \n see the options\n");
   while(1){
     getchar();
-    printf("press 1 to tokenize a word\n");
+    printf("\npress 1 to tokenize a word\n");
     printf("press 2 to see your history\n");
     printf("press 3 to exit the program\n");
     scanf("%d",&desition);
@@ -28,7 +28,7 @@ int main(void){
        case 1:
 	 printf("tokanize\n");
 	 tokenizeOption(history);
-	 print_history(history);
+	 // print_history(history);
 	 break;
        case 2:
 	 printf("history\n");
@@ -56,7 +56,9 @@ void tokenizeOption(List* hst){ //tokenizer option calls tokenizer functions and
   char* p = userInput;
   char** userTokens = tokenize(p);
   print_tokens(userTokens);
+  puts("\n");
   add_history(hst, userInput);
+  print_history(hst);
 }
 
 void historyOption(List* hst){

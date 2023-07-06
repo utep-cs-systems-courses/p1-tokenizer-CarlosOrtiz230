@@ -17,25 +17,30 @@ List* init_history(){
    char* str - the string to store
 */
 void add_history(List *list, char *str){
-  Item *temp = list -> root;
+  Item* temp = malloc(sizeof(Item));
+  temp = list -> root;
+  printf("\nCurrent root is %s" , list -> root);
   int  counter = 0;//keep a a number
   //creating the new element
+
   Item* newItem = malloc(sizeof(Item));
   newItem -> str = str;
-  newItem -> next = NULL;
-  
-  if(temp == NULL){ //if temp is empty, item becomes the root
+  if(list -> root == NULL){ //if temp is empty, item becomes the root
+    puts("\nthis should happen just once");
     newItem -> id = counter;
     list -> root = newItem;
     return;
   }
 
-  while(temp-> next != NULL ){
+  while(temp != NULL ){
+    printf("\ncurrent temp is add items  %s\n", temp ->str);
     temp = temp -> next;
     counter++;
  }
   temp->next = newItem; 
-  temp->id = counter;
+  temp->next->id = counter;
+  puts("about to return");
+  return;
 }//add history ends
 
 /* retrieve othe string stored in the node where item->id == id.
@@ -53,20 +58,24 @@ char *get_history(List *list, int id){
     temp = temp -> next; 
   }
   
-  return temp -> str;
+  return NULL;
 }//get char ends
+
 
 /*print the entire contents of the list. */
 void print_history(List *list){
-  Item *temp = list -> root;
+  Item *temp = list->root;
   int counter = 0;
-  char *word;
-  ///travers elinked list to print it
-  while(temp!=NULL){
-    word = get_history(list,counter);
-    printf("Element number %d in the history is the word %s\n",counter,word);
-    temp = temp -> next;
+  // Recorrer la lista para imprimir su contenido
+  while (temp != NULL) {
+    if (temp->str != NULL) {
+      printf("Element number %d in the history is the word %s\n", counter, temp->str);
+    } else {
+      printf("Element number %d in the history does not have a word associated\n", counter);
+    }
+    temp = temp->next;
     counter++;
+
   }
 }//print history ends
 
