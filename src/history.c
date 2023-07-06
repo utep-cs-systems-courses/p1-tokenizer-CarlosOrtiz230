@@ -1,4 +1,3 @@
-
 #include "stdio.h"/* for putchar */
 #include <stddef.h>
 #include <stdlib.h>
@@ -20,12 +19,14 @@ List* init_history(){
 void add_history(List *list, char *str){
   Item *temp = list -> root;
   int  counter = 0;//keep a a number
+  //creating the new element
   Item* newItem = malloc(sizeof(Item));
   newItem -> str = str;
+  newItem -> next = NULL;
+  
   if(temp == NULL){ //if temp is empty, item becomes the root
-    newItem = newItem;
     newItem -> id = counter;
-    list -> root = newItem
+    list -> root = newItem;
     return;
   }
 
@@ -34,33 +35,37 @@ void add_history(List *list, char *str){
     counter++;
  }
   temp->next = newItem; 
-  temp->id = counter;;
+  temp->id = counter;
 }//add history ends
 
-/* retrieve the string stored in the node where item->id == id.
+/* retrieve othe string stored in the node where item->id == id.
    list* list - the linked list
    int id - the id of the item to find */
+
 char *get_history(List *list, int id){
   Item  *temp  = list -> root;
   int counter = 0;
   while(temp!=NULL){
-    counter++;
-    temp++;
-    if(counter == id){
+    if(counter == id){ //if you find the desired item return it 
       return temp -> str;
     }
+    counter++;
+    temp = temp -> next; 
   }
-  return NULL;
+  
+  return temp -> str;
 }//get char ends
 
 /*print the entire contents of the list. */
 void print_history(List *list){
   Item *temp = list -> root;
   int counter = 0;
+  char *word;
+  ///travers elinked list to print it
   while(temp!=NULL){
-    char* word = get_history(list,counter);
+    word = get_history(list,counter);
     printf("Element number %d in the history is the word %s\n",counter,word);
-    temp++;
+    temp = temp -> next;
     counter++;
   }
 }//print history ends
@@ -70,6 +75,7 @@ void print_history(List *list){
 void free_history(List *list){
   Item *current = list->root;
   Item *next;
+  //traveerse the list to earse everything
   while (current != NULL) {
     next = current->next;
     free(current->str);
@@ -79,5 +85,15 @@ void free_history(List *list){
   list->root = NULL;
 }
 
+int sizeHistory(List* hst){
+  Item *temp = hst -> root;
+  int counter = 0;
+  ///travers elinked list to print it
+  while(temp!=NULL){
+    temp = temp -> next;
+    counter++;
+  }
+  return counter;
+}
 
 

@@ -934,3 +934,1309 @@ remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
 To https://github.com/utep-cs-systems-courses/p1-tokenizer-CarlosOrtiz230.git
    43803f7..5687d63  master -> master
 student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> make all
+make: *** No rule to make target 'all'.  Stop.
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   src/history.c
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	#*shell*#
+
+no changes added to commit (use "git add" and/or "git commit -a")
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> git add .
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   #*shell*#
+	modified:   src/history.c
+
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> git commit -m "still working in fixing"
+[master 117369d] still working in fixing
+ 2 files changed, 941 insertions(+), 7 deletions(-)
+ create mode 100644 #*shell*#
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> git push
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 3.40 KiB | 3.40 MiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.        
+To https://github.com/utep-cs-systems-courses/p1-tokenizer-CarlosOrtiz230.git
+   5687d63..117369d  master -> master
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> make all
+make: *** No rule to make target 'all'.  Stop.
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> make all
+make: *** No rule to make target 'all'.  Stop.
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230> cd src
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘main’:
+mainProgram.c:16:19: error: invalid initializer
+   List history =  init_history(); //history is declared and  initializated
+                   ^~~~~~~~~~~~
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘main’:
+mainProgram.c:16:19: error: invalid initializer
+   List history =  init_history(); //history is declared and  initializated
+                   ^~~~~~~~~~~~
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘main’:
+mainProgram.c:16:19: error: invalid initializer
+   List history =  init_history(); //history is declared and  initializated
+                   ^~~~~~~~~~~~
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘main’:
+mainProgram.c:16:19: error: invalid initializer
+   List history =  init_history(); //history is declared and  initializated
+                   ^~~~~~~~~~~~
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> o
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘main’:
+mainProgram.c:16:19: error: invalid initializer
+   List history =  init_history(); //history is declared and  initializated
+                   ^~~~~~~~~~~~
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> o
+WARNING: terminal is not fully functional
+Missing filename ("less --help" for help)
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘main’:
+mainProgram.c:16:19: error: invalid initializer
+   List history =  init_history(); //history is declared and  initializated
+                   ^~~~~~~~~~~~
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+bash: syntax error near unexpected token `newline'
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: syntax error near unexpected token `newline'
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+> > 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+>   C-c C-c
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+If 'mainProgram.c:56:20:' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf mainProgram.c:56:20:
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: syntax error near unexpected token `hst,'
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If '^~~~~~~~~~' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ^~~~~~~~~~
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If 'In' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf In
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If 'history.h:21:6:' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf history.h:21:6:
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: syntax error near unexpected token `('
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If '^~~~~~~~~~~' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ^~~~~~~~~~~
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If 'mainProgram.c:57:17:' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf mainProgram.c:57:17:
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: syntax error near unexpected token `hst'
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If '^~~' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ^~~
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If 'In' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf In
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If 'history.h:29:6:' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf history.h:29:6:
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: syntax error near unexpected token `('
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If '^~~~~~~~~~~~~' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ^~~~~~~~~~~~~
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: builtin: No such file or directory
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: syntax error near unexpected token `newline'
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:15: error: incompatible type for argument 1 of ‘add_history’
+   add_history(hst, userTokens);
+               ^~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+In file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+mainProgram.c:57:17: error: incompatible type for argument 1 of ‘print_history’
+   print_history(hst);
+                 ^~~
+In file included from mainProgram.c:7:0:
+history.h:29:6: note: expected ‘List * {aka struct s_List *}’ but argument is of type ‘List {aka struct s_List}’
+ void print_history(List *list);
+      ^~~~~~~~~~~~~
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+bash: syntax error near unexpected token `newline'
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘tokenizeOption’:
+mainProgram.c:56:20: warning: passing argument 2 of ‘add_history’ from incompatible pointer type [-Wincompatible-pointer-types]
+   add_history(hst, userTokens);
+                    ^~~~~~~~~~
+mIn file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -g -O3   -c -o history.o history.c
+history.c: In function ‘add_history’:
+history.c:32:5: error: expected ‘;’ before ‘return’
+     return;
+     ^~~~~~
+make: *** [<builtin>: history.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> ./runner
+hi, welcome to your tokenizer :d 
+ see the options
+mIn file included from mainProgram.c:7:0:
+history.h:21:6: note: expected ‘char *’ but argument is of type ‘char **’
+ void add_history(List *list, char *str);
+      ^~~~~~~~~~~
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -g -O3   -c -o history.o history.c
+history.c: In function ‘add_history’:
+history.c:32:5: error: expected ‘;’ before ‘return’
+     return;
+     ^~~~~~
+make: *** [<builtin>: history.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+this is not a valid option
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+leaving the programm
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> history.c: In function ‘add_history’:
+history.c:32:5: error: expected ‘;’ before ‘return’
+     return;
+     ^~~~~~
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If 'history.c:' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf history.c:
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If 'history.c:32:5:' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf history.c:32:5:
+If '’' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ’
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: return: can only `return' from a function or sourced script
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> If '^~~~~~' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ^~~~~~
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: builtin: No such file or directory
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> bash: syntax error near unexpected token `newline'
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+cc -g -O3   -c -o history.o history.c
+history.c: In function ‘add_history’:
+history.c:32:5: error: expected ‘;’ before ‘return’
+     return;
+     ^~~~~~
+make: *** [<builtin>: history.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o history.o history.c
+cc -o runner -g -O3 mainProgram.o tokenizer.o history.o
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> ./runner
+hi, welcome to your tokenizer :d 
+ see the options
+1
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+1
+tokanize
+Enter a string:
+> hola mama estoy programando
+Tokens:
+Token: hola	Address: 0x1d2baa0
+Token: mama	Address: 0x1d2baa8
+Token: estoy	Address: 0x1d2bab0
+Token: programando
+	Address: 0x1d2bab8
+Element number 0 in the history is the word hola mama estoy programando
+
+1
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+1
+tokanize
+Enter a string:
+> jaja soy el mejor programando
+Tokens:
+Token: jaja	Address: 0x1d2bbf0
+Token: soy	Address: 0x1d2bbf8
+Token: el	Address: 0x1d2bc00
+Token: mejor	Address: 0x1d2bc08
+Token: programando
+	Address: 0x1d2bc10
+Element number 0 in the history is the word jaja soy el mejor programando
+
+Element number 1 in the history is the word jaja soy el mejor programando
+
+
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+1
+tokanize
+Enter a string:
+> santaflow es la verga xd
+Tokens:
+Token: santaflow	Address: 0x1d2bd90
+Token: es	Address: 0x1d2bd98
+Token: la	Address: 0x1d2bda0
+Token: verga	Address: 0x1d2bda8
+Token: xd
+	Address: 0x1d2bdb0
+Element number 0 in the history is the word santaflow es la verga xd
+
+Element number 1 in the history is the word santaflow es la verga xd
+
+Element number 2 in the history is the word santaflow es la verga xd
+
+
+press 1 to tokenize a word
+press 2 to see your history
+press 3 to exit the program
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  C-c C-c
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> make all
+cc -g -O3   -c -o mainProgram.o mainProgram.c
+mainProgram.c: In function ‘main’:
+mainProgram.c:30:18: error: incompatible type for argument 1 of ‘tokenizeOption’
+   tokenizeOption(history);
+                  ^~~~~~~
+mainProgram.c:11:6: note: expected ‘List {aka struct s_List}’ but argument is of type ‘List * {aka struct s_List *}’
+ void tokenizeOption(List history);
+      ^~~~~~~~~~~~~~
+mainProgram.c:34:18: error: incompatible type for argument 1 of ‘tokenizeOption’
+   tokenizeOption(history);
+                  ^~~~~~~
+mainProgram.c:11:6: note: expected ‘List {aka struct s_List}’ but argument is of type ‘List * {aka struct s_List *}’
+ void tokenizeOption(List history);
+      ^~~~~~~~~~~~~~
+mainProgram.c: At top level:
+mainProgram.c:49:6: error: conflicting types for ‘tokenizeOption’
+ void tokenizeOption(List* hst){ //tokenizer option calls tokenizer functions and recieve history
+      ^~~~~~~~~~~~~~
+mainProgram.c:11:6: note: previous declaration of ‘tokenizeOption’ was here
+ void tokenizeOption(List history);
+      ^~~~~~~~~~~~~~
+mainProgram.c:61:6: error: conflicting types for ‘historyOption’
+ void historyOption(List* hst){
+      ^~~~~~~~~~~~~
+mainProgram.c:12:6: note: previous declaration of ‘historyOption’ was here
+ void historyOption(List history);
+      ^~~~~~~~~~~~~
+mainProgram.c: In function ‘historyOption’:
+mainProgram.c:72:6: warning: implicit declaration of function ‘swtich’; did you mean ‘strchr’? [-Wimplicit-function-declaration]
+      swtich(userDesiton){
+      ^~~~~~
+      strchr
+mainProgram.c:72:13: error: ‘userDesiton’ undeclared (first use in this function); did you mean ‘userDesition’?
+      swtich(userDesiton){
+             ^~~~~~~~~~~
+             userDesition
+mainProgram.c:72:13: note: each undeclared identifier is reported only once for each function it appears in
+mainProgram.c:72:25: error: expected ‘;’ before ‘{’ token
+      swtich(userDesiton){
+                         ^
+make: *** [<builtin>: mainProgram.o] Error 1
+student@systems-vm:~/p1-tokenizer-CarlosOrtiz230/src> 
