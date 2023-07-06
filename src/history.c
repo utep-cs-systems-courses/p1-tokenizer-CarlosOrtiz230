@@ -1,3 +1,4 @@
+
 #include "stdio.h"/* for putchar */
 #include <stddef.h>
 #include <stdlib.h>
@@ -18,27 +19,28 @@ List* init_history(){
 */
 void add_history(List *list, char *str){
   Item* temp = malloc(sizeof(Item));
-  temp = list -> root;
-  printf("\nCurrent root is %s" , list -> root);
+  printf("\nCurrent root is %p" , list ->root);
   int  counter = 0;//keep a a number
-  //creating the new element
-
+  
+  //creating the new item
   Item* newItem = malloc(sizeof(Item));
-  newItem -> str = str;
-  if(list -> root == NULL){ //if temp is empty, item becomes the root
+  newItem->str = str;
+  newItem->next = NULL;
+  
+  if(temp == NULL){ //if temp is empty, item becomes the root
     puts("\nthis should happen just once");
     newItem -> id = counter;
     list -> root = newItem;
     return;
   }
 
-  while(temp != NULL ){
+  while(temp->next != NULL ){
     printf("\ncurrent temp is add items  %s\n", temp ->str);
     temp = temp -> next;
     counter++;
  }
   temp->next = newItem; 
-  temp->next->id = counter;
+  newItem   ->id = counter+1;
   puts("about to return");
   return;
 }//add history ends
@@ -60,7 +62,6 @@ char *get_history(List *list, int id){
   
   return NULL;
 }//get char ends
-
 
 /*print the entire contents of the list. */
 void print_history(List *list){
