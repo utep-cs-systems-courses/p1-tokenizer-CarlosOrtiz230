@@ -48,17 +48,21 @@
    
   
 /* void tokenizeOption(List* hst){ //tokenizer option calls tokenizer functions and recieve history  */
+
   char userInput[MAX_LENGTH];
-  printf("Enter a string:\n> ");
-  getchar();
-  fgets(userInput,MAX_LENGTH,stdin);
-  userInput[MAX_LENGTH - 1] = '\0';
-  char* p = userInput;
-  char** userTokens = tokenize(p);
-  print_tokens(userTokens);
-  puts("\n");
-  add_history(history, userInput);
-  print_history(history);
+  int index = 0;
+  while(1){
+    printf("Enter a string:\n> ");
+    getchar();
+    fgets(userInput,MAX_LENGTH,stdin);
+    userInput[MAX_LENGTH - 1] = '\0';
+    char* p = userInput;
+    char** userTokens = tokenize(p);
+    print_tokens(userTokens);
+    puts("\n");
+    add_history(history, userInput);
+    print_history(history);
+  }
 /* } */
 
 /* //void historyOption(List* hst){ */

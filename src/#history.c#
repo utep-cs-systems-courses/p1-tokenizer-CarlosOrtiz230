@@ -23,13 +23,11 @@ void add_history(List *list, char *str){
     return;
   }
   //creating new item
-  
   Item* newItem = malloc(sizeof(Item));
   if (newItem == NULL) {
     printf("Error: Memory allocation failed\n");
     return;
   }
-
   //assign of memory for the word and the copy
   newItem->str = malloc(strlen(str) + 1);
   if (newItem->str == NULL) {
