@@ -18,32 +18,32 @@ List* init_history(){
    char* str - the string to store
 */
 void add_history(List *list, char *str){
-  Item* temp = malloc(sizeof(Item));
-  printf("\nCurrent root is %p" , list ->root);
+  Item *temp = list -> root;
   int  counter = 0;//keep a a number
   
   //creating the new item
-  Item* newItem = malloc(sizeof(Item));
+  Item* newItem = calloc(1,sizeof(Item));
   newItem->str = str;
   newItem->next = NULL;
+
+  if(list == NULL){ return;}
   
   if(temp == NULL){ //if temp is empty, item becomes the root
-    puts("\nthis should happen just once");
+    puts("\nAssign the root should happen just once");
     newItem -> id = counter;
     list -> root = newItem;
+    printf("\nthe word %s is added from root %s",newItem->str,list->root ->str);
     return;
   }
-
   while(temp->next != NULL ){
-    printf("\ncurrent temp is add items  %s\n", temp ->str);
     temp = temp -> next;
     counter++;
  }
   temp->next = newItem; 
-  newItem   ->id = counter+1;
-  puts("about to return");
+  newItem ->id = counter+1;
   return;
 }//add history ends
+ 
 
 /* retrieve othe string stored in the node where item->id == id.
    list* list - the linked list
