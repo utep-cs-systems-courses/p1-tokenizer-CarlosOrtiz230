@@ -73,6 +73,7 @@ void historyOption(List* hst){
      printf(">press 1 to see the whole history\n");
      printf(">press 2 to see a specific index history\n");
      printf(">press 3 to go back to the main menu\n");
+     printf(">press 4 to clean the history\n");
      scanf("%i",&userDesition);
      switch(userDesition){
        case 1:
